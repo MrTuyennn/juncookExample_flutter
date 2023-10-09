@@ -22,7 +22,10 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('$state', style: Theme.of(context).textTheme.bodyLarge),
+              Text('Count ${state.count}',
+                  style: Theme.of(context).textTheme.bodyLarge),
+              Text('Count ${state.text}',
+                  style: Theme.of(context).textTheme.bodyLarge),
               // ignore: unrelated_type_equality_checks
               if (context.read<ThemeCubit>().state.themeMode == ThemeMode.light)
                 Text('Light', style: Theme.of(context).textTheme.bodyLarge)
