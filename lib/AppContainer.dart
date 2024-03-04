@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:juncook_example/bloc/counter/counter_bloc.dart';
+import 'package:juncook_example/view/screen_connect_socket.dart';
 import 'package:provider/provider.dart'; // Add this line
 import 'package:juncook_example/bloc/themeBloc/theme_cubit.dart';
 import 'package:juncook_example/bloc/themeBloc/theme_repository.dart';
@@ -49,7 +50,7 @@ class AppView extends StatelessWidget {
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: state.themeMode,
-          home: const HomeScreen(),
+          home: const ScreenSocket(),
         );
       },
     );

@@ -3,9 +3,12 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:juncook_example/bloc/socket/socket_bloc.dart';
 import 'package:juncook_example/floating-hearts/pages/home-widget.dart';
 import 'package:juncook_example/floating-hearts/provider/floating-hearts-provider.dart';
+import 'package:juncook_example/view/screen_connect_socket.dart';
 import 'package:provider/provider.dart';
 
 /// This sample app shows an app with two screens.
@@ -49,12 +52,18 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => FloatingHeartsProvider()),
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Floating Hearts',
-        theme: ThemeData.dark(),
-        home: const MyHomePage(),
-      ),
+      child: MultiBlocProvider(
+          providers: [
+            BlocProvider<SocketBloc>(
+              create: (BuildContext context) => SocketBloc(),
+            ),
+          ],
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Floating Hearts',
+            theme: ThemeData.dark(),
+            home: const ScreenSocket(),
+          )),
     );
   }
 }
