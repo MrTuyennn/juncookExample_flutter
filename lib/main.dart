@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:juncook_example/bloc/socket/socket_bloc.dart';
 import 'package:juncook_example/floating-hearts/pages/home-widget.dart';
 import 'package:juncook_example/floating-hearts/provider/floating-hearts-provider.dart';
+import 'package:juncook_example/view/count_down_page.dart';
 import 'package:juncook_example/view/screen_connect_socket.dart';
 import 'package:provider/provider.dart';
 
@@ -62,7 +63,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'Floating Hearts',
             theme: ThemeData.dark(),
-            home: const ScreenSocket(),
+            home: const CountDown(),
           )),
     );
   }
